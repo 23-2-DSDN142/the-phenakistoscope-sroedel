@@ -1,0 +1,85 @@
+// function setup_pScope(pScope){
+//     pScope.output_mode(ANIMATED_DISK);
+//     pScope.scale_for_screen(true);
+//     pScope.draw_layer_boundaries(false);
+//     pScope.set_direction(CW);
+//     pScope.set_slice_count(8);
+//     pScope.load_image_sequence("chest_open", "png", 24);
+//     pScope.load_image("sunflower","png")
+//   }
+  
+//   function setup_layers(pScope){
+//     //lets us draw the whole circle background, ignoring the boundaries
+//     new PLayer(null,60,70,100);
+  
+//     let insideBackground = new PLayer(insideBlue);
+//     insideBackground.mode(RING);
+//     insideBackground.set_boundary(0,550);
+  
+  
+  
+//     let outerRing = new PLayer(outsideRing);
+//     outerRing.mode(RING);
+//     outerRing.set_boundary(930,1000);
+  
+//     let chestSequence = new PLayer(chest);
+//     chestSequence.mode(RING);
+//     chestSequence.set_boundary(0,1000);
+  
+//     let CenterImage = new PLayer(sunflower);
+//     CenterImage.mode(RING);
+//     CenterImage.set_boundary(1000,1000);
+  
+//     let star1 = new PLayer(blink1);
+//     star1.mode(RING);
+//     star1.set_boundary(1000,1000)
+  
+//     let star2 = new PLayer(blink2);
+//     star2.mode(RING);
+//     star2.set_boundary(1000,1000)
+//   }
+  
+//   function sunflower(x,y,animation,pScope){
+//     scale(3.5);
+  
+//      if(animation.frame == 0)
+//     {
+//     pScope.draw_image("sunflower",x,y);
+//   } 
+//   }
+  
+//   function insideBlue (x,y,animation,pScope){
+//     pScope.fill_background("blue");
+//   }
+//   function outsideRing (x,y,animation,pScope){
+//       pScope.fill_background("purple");
+//   }
+//   function chest(x,y,animation,pScope){
+//     translate(x,y-700);
+//     scale(6);
+  
+//     pScope.draw_image_from_sequence("chest_open", 0, 0, animation.frame);
+   
+//   }
+  
+  
+  
+  
+//   function blink1(x,y,animation,pScope){
+//     let mvmnt =  100 *animation.frame;
+//     noStroke();
+//     translate(x+200,y+50)
+//     if(animation.frame == 0){
+//       ellipse (x,800,20,20)
+//     }
+//   }
+  
+//   function blink2(x,y,animation,pScope){
+//     let mvmnt =  100 *animation.frame;
+//     noStroke();
+//     fill("black")
+//     translate(x+90,y)
+//     if(animation.frame == 0){
+//       ellipse (700,700,40,40)
+//     }
+//   }
