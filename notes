@@ -83,3 +83,7 @@
 //       ellipse (700,700,40,40)
 //     }
 //   }
+
+
+//ONLy in ring mode 
+//if(animation.frame >0.5)
