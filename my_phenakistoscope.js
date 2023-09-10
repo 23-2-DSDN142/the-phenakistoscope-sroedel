@@ -1,6 +1,6 @@
 
 function setup_pScope(pScope){
-  pScope.output_mode(STATIC_FRAME);
+  pScope.output_mode(OUTPUT_GIF(1000));
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(true);
   pScope.set_direction(CCW);
