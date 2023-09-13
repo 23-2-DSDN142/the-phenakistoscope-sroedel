@@ -38,10 +38,11 @@ function setup_layers(pScope){
 }
 
 function meteorimage(x,y,animation,pScope){
+  scale(1.9);
+  translate(x,y-440)
   if(animation.frame >0.5){
-    pScope.draw_image_from_sequence("meteor", 100, 900, animation.frame)
+    pScope.draw_image_from_sequence("meteor", 0, 900, animation.frame)
   }
-  scale(5);
 }
 
 function moon(x,y,animation,pScope){
