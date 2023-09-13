@@ -3,10 +3,11 @@ function setup_pScope(pScope){
   pScope.output_mode(ANIMATED_DISK);
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
-  pScope.set_direction(CCW);
+  pScope.set_direction(CW);
   pScope.set_slice_count(8);
   pScope.load_image_sequence("moon_cycle","png",8);
   pScope.load_image("Earth","png");
+  pScope.load_image_sequence("meteor","png",9);
   
 }
 
@@ -14,6 +15,10 @@ function setup_layers(pScope){
 
   new PLayer(null,22, 27, 54);  //lets us draw the whole circle background, ignoring the boundaries
 
+  let meteorsequence = new PLayer(meteorimage);
+  meteorsequence.mode(RING);
+  meteorsequence.set_boundary(100,1000);
+  
   let moonsequence = new PLayer(moon);
   moonsequence.mode(RING);
   moonsequence.set_boundary(0,1000);
@@ -32,6 +37,12 @@ function setup_layers(pScope){
 
 }
 
+function meteorimage(x,y,animation,pScope){
+  if(animation.frame >0.5){
+    pScope.draw_image_from_sequence("meteor", 100, 900, animation.frame)
+  }
+  scale(5);
+}
 
 function moon(x,y,animation,pScope){
   scale(1.5);
