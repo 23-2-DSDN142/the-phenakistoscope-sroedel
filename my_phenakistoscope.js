@@ -28,11 +28,11 @@ function setup_layers(pScope){
   earthsequence.mode(RING);
   earthsequence.set_boundary(1000,1000);
 
-  let Wstarsequence = new PLayer(whitestar);
+  let Wstarsequence = new PLayer(whitestar);//white star
   Wstarsequence.mode(RING);
   Wstarsequence.set_boundary( 0, 1000 );
 
-  let Ystarsequence = new PLayer(yellowstar);
+  let Ystarsequence = new PLayer(yellowstar);//white star
   Ystarsequence.mode(RING);
   Ystarsequence.set_boundary( 0, 900 );
 
@@ -61,8 +61,8 @@ function moon(x,y,animation,pScope){
 
     function whitestar(x, y, animation, pScope){
       let pulse  =(animation.wave(1)* 5)
-      let startcolor=color(255, 255, 255);
-      let endcolor =color(22, 27, 54);
+      let startcolor=color(255, 255, 255);//white
+      let endcolor =color(22, 27, 54);//background color
       let animatingcolor = lerpColor(startcolor,endcolor,animation.frame)
       
       fill(animatingcolor);
@@ -76,8 +76,8 @@ function moon(x,y,animation,pScope){
 function yellowstar(x, y, animation, pScope){
 
   let pulse2  =(animation.wave(1)* 3)
-  let startcolor=color(22, 27, 54);
-  let endcolor =color(250, 222, 167);
+  let startcolor=color(22, 27, 54);//background color
+  let endcolor =color(250, 222, 167);//yellow
   let animatingcolor = lerpColor(startcolor,endcolor,animation.wave(1))
   
   fill(animatingcolor);
