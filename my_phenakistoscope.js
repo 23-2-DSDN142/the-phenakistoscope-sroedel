@@ -1,6 +1,7 @@
 
 function setup_pScope(pScope){
-  pScope.output_mode(ANIMATED_DISK);
+ // pScope.output_mode(OUTPUT_GIF(1000));
+ pScope.output_mode(ANIMATED_DISK);//Does not exprot properly as a GIF please look at it inLive View
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
   pScope.set_direction(CW);
@@ -17,7 +18,7 @@ function setup_layers(pScope){
 
   let meteorsequence = new PLayer(meteorimage);
   meteorsequence.mode(RING);
-  meteorsequence.set_boundary(100,1000);
+  meteorsequence.set_boundary(100,100);
   
   let moonsequence = new PLayer(moon);
   moonsequence.mode(RING);
@@ -33,7 +34,7 @@ function setup_layers(pScope){
 
   let Ystarsequence = new PLayer(yellowstar);
   Ystarsequence.mode(RING);
-  Ystarsequence.set_boundary( 0, 1000 );
+  Ystarsequence.set_boundary( 0, 900 );
 
 }
 
@@ -50,6 +51,7 @@ function moon(x,y,animation,pScope){
   translate(x,y-700);
   pScope.draw_image_from_sequence("moon_cycle", 0, 300, animation.frame)
 }
+
   function earth(x,y,animation,pScope){
      scale(4);
        if(animation.frame == 0)  {
